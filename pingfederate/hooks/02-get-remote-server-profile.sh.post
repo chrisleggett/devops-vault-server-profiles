@@ -13,7 +13,7 @@ ${VERBOSE} && set -x
 # shellcheck source=pingcommon.lib.sh
 . "${HOOKS_DIR}/pingcommon.lib.sh"
 
-_secrets_env_vars_path="${SECRETS_DIR}\env_vars"
+_secrets_env_vars_path="${SECRETS_DIR}/env_vars"
 if test -d "${_secrets_env_vars_path}" 
 then
 
