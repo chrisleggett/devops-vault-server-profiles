@@ -14,7 +14,7 @@ ${VERBOSE} && set -x
 . "${HOOKS_DIR}/pingcommon.lib.sh"
 
 _secrets_env_vars_path="${SECRETS_DIR}\env_vars"
-if test -f "${_secrets_env_vars_path}" 
+if test -d "${_secrets_env_vars_path}" 
 then
 
     for _file in "${_secrets_env_vars_path}"/*
@@ -27,5 +27,8 @@ then
             echo ""
         } >> "${CONTAINER_ENV}"
     done
-
+else
+    echo_bar
+    echo "No secrets found in location: " ${_secrets_env_vars_path} 
+    echo_bar
 fi
